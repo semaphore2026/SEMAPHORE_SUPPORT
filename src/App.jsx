@@ -1,122 +1,119 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import './App.css';
+
+// Data imports
+import { eventsData } from './data/eventsData';
+import { scheduleData, scheduleDays, scheduleVenues } from './data/scheduleData';
+import { contactsData, contactCategories } from './data/contactsData';
+import { faqData, faqCategories } from './data/faqData';
+import { ruleCategories } from './data/rulesData';
+import { galleryData, galleryCategories } from './data/galleryData';
+
+// Component imports
+import { Navbar } from './components/Navbar';
+import { HeroBanner } from './components/HeroBanner';
+import { EventSection } from './components/EventSection';
+import { ScheduleSection } from './components/ScheduleSection';
+import { FaqSection } from './components/FaqSection';
+import { ContactsSection } from './components/ContactsSection';
+import { RulesSection } from './components/RulesSection';
+import { GallerySection } from './components/GallerySection';
+import { SupportTicketModal } from './components/SupportTicketModal';
+import { Footer } from './components/Footer';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeSection, setActiveSection] = useState('top');
+  const [globalSearch, setGlobalSearch] = useState('');
+  const [isTicketModalOpen, setIsTicketModalOpen] = useState(false);
+
+  const handleNavigate = (sectionId) => {
+    setActiveSection(sectionId);
+    if (sectionId === 'top') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const yOffset = -75; // Account for sticky navbar height
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="app-layout">
+      {/* Sticky Header Navbar */}
+      <Navbar
+        activeSection={activeSection}
+        onNavigate={handleNavigate}
+        onOpenTicketModal={() => setIsTicketModalOpen(true)}
+      />
 
-      <div className="ticks"></div>
+      {/* Main Hero Banner with Global Search and Status */}
+      <HeroBanner
+        globalSearch={globalSearch}
+        setGlobalSearch={setGlobalSearch}
+        onNavigate={handleNavigate}
+        onOpenTicketModal={() => setIsTicketModalOpen(true)}
+        eventsCount={eventsData.length}
+        scheduleCount={scheduleData.length}
+      />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      {/* Event Details Section (Location, Time, Head Details, Rules) */}
+      <EventSection
+        events={eventsData}
+        globalSearch={globalSearch}
+      />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      {/* Multi-Day Schedules & Venue Timeline (Date, Time, Venue) */}
+      <ScheduleSection
+        scheduleData={scheduleData}
+        scheduleDays={scheduleDays}
+        scheduleVenues={scheduleVenues}
+        globalSearch={globalSearch}
+      />
+
+      {/* Frequently Asked Questions */}
+      <FaqSection
+        faqData={faqData}
+        categories={faqCategories}
+        globalSearch={globalSearch}
+        onOpenTicketModal={() => setIsTicketModalOpen(true)}
+      />
+
+      {/* Main Contact Persons Directory (Conveners, Leads, Hotlines) */}
+      <ContactsSection
+        contacts={contactsData}
+        categories={contactCategories}
+        globalSearch={globalSearch}
+      />
+
+      {/* General Rules & Code of Conduct */}
+      <RulesSection
+        ruleCategories={ruleCategories}
+        globalSearch={globalSearch}
+      />
+
+      {/* Photo Gallery & Lightbox */}
+      <GallerySection
+        galleryData={galleryData}
+        categories={galleryCategories}
+        globalSearch={globalSearch}
+      />
+
+      {/* 24/7 Support Ticket Desk Modal */}
+      <SupportTicketModal
+        isOpen={isTicketModalOpen}
+        onClose={() => setIsTicketModalOpen(false)}
+      />
+
+      {/* Footer with Hotlines and Quick Links */}
+      <Footer
+        onNavigate={handleNavigate}
+        onOpenTicketModal={() => setIsTicketModalOpen(true)}
+      />
+    </div>
+  );
 }
 
-export default App
+export default App;

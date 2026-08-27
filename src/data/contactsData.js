@@ -1,0 +1,141 @@
+export const contactCategories = [
+  "All Contacts",
+  "Chief Conveners",
+  "Event Technical Leads",
+  "Registration & Helpdesk",
+  "Hospitality & Stay",
+  "Medical & Emergency"
+];
+
+export const contactsData = [
+  {
+    id: "cnt-01",
+    name: "Dr. K. S. Ramanathan",
+    role: "Chief Faculty Convener",
+    committee: "Chief Conveners",
+    department: "Dept. of Computer Science & Engg.",
+    phone: "+91 94480 55123",
+    email: "convener.semaphore@fest.edu",
+    whatsapp: "919448055123",
+    desk: "Faculty Boardroom #101, Ground Floor Admin Block",
+    availability: "08:30 AM - 08:00 PM",
+    isPrimary: true
+  },
+  {
+    id: "cnt-02",
+    name: "Vikrant Deshmukh",
+    role: "Overall Student President & Fest Lead",
+    committee: "Chief Conveners",
+    department: "Student Council Core",
+    phone: "+91 98860 11223",
+    email: "president.semaphore@fest.edu",
+    whatsapp: "919886011223",
+    desk: "Central Control Room (Opp. Main Audi Gate 1)",
+    availability: "24x7 Available",
+    isPrimary: true
+  },
+  {
+    id: "cnt-03",
+    name: "Ananya Hegde",
+    role: "Vice President & General Coordinator",
+    committee: "Chief Conveners",
+    department: "Student Council Core",
+    phone: "+91 98860 11224",
+    email: "vp.semaphore@fest.edu",
+    whatsapp: "919886011224",
+    desk: "Central Control Room (Desk #0)",
+    availability: "08:00 AM - 09:00 PM",
+    isPrimary: true
+  },
+  {
+    id: "cnt-04",
+    name: "Rahul Sharma",
+    role: "Hackathon & Dev Lead",
+    committee: "Event Technical Leads",
+    department: "Technical Committee",
+    phone: "+91 98450 12345",
+    email: "rahul.hackathon@semaphore2026.org",
+    whatsapp: "919845012345",
+    desk: "Turing Lab Control Station (3rd Floor CS Block)",
+    availability: "24 Hours (Hackathon Duration)",
+    isPrimary: false
+  },
+  {
+    id: "cnt-05",
+    name: "Priya Nair",
+    role: "Web & UI/UX Event Head",
+    committee: "Event Technical Leads",
+    department: "Technical Committee",
+    phone: "+91 98765 43211",
+    email: "priya.webcraft@semaphore2026.org",
+    whatsapp: "919876543211",
+    desk: "Ada Lovelace Lab Helpdesk (2nd Floor IT)",
+    availability: "09:00 AM - 06:00 PM",
+    isPrimary: false
+  },
+  {
+    id: "cnt-06",
+    name: "Aditya Kulkarni",
+    role: "Bug Hunt & Systems Lead",
+    committee: "Event Technical Leads",
+    department: "Technical Committee",
+    phone: "+91 97412 88990",
+    email: "aditya.bughunt@semaphore2026.org",
+    whatsapp: "919741288990",
+    desk: "Linus Lab Room 104",
+    availability: "09:00 AM - 06:00 PM",
+    isPrimary: false
+  },
+  {
+    id: "cnt-07",
+    name: "Meera Sen",
+    role: "AI Arena & Data Lead",
+    committee: "Event Technical Leads",
+    department: "Technical Committee",
+    phone: "+91 99881 22334",
+    email: "meera.sen@semaphore2026.org",
+    whatsapp: "919988122334",
+    desk: "PG Block Seminar Hall A Desk",
+    availability: "09:00 AM - 06:00 PM",
+    isPrimary: false
+  },
+  {
+    id: "cnt-08",
+    name: "Kavya Menon",
+    role: "Central Registration & ID Desk Head",
+    committee: "Registration & Helpdesk",
+    department: "Finance & Admissions Committee",
+    phone: "+91 96112 44556",
+    email: "registration@semaphore2026.org",
+    whatsapp: "919611244556",
+    desk: "Central Registration Counters 1 to 6 (Main Foyer)",
+    availability: "08:00 AM - 06:00 PM",
+    isPrimary: true
+  },
+  {
+    id: "cnt-09",
+    name: "Girish Nayak",
+    role: "Hospitality, Food & Stay In-Charge",
+    committee: "Hospitality & Stay",
+    department: "Logistics Committee",
+    phone: "+91 95350 77889",
+    email: "hospitality@semaphore2026.org",
+    whatsapp: "919535077889",
+    desk: "Hostel Block A Helpdesk & Food Court Booth",
+    availability: "24x7 Available",
+    isPrimary: true
+  },
+  {
+    id: "cnt-10",
+    name: "Dr. Sandeep Rao",
+    role: "Chief Medical Officer (Emergency Hotline)",
+    committee: "Medical & Emergency",
+    department: "Campus Health Centre",
+    phone: "+91 98455 00911",
+    email: "medical@fest.edu",
+    whatsapp: "919845500911",
+    desk: "First Aid Station (Audi Gate 2 & Campus Clinic)",
+    availability: "24x7 Emergency Response",
+    isPrimary: true
+  }
+];
