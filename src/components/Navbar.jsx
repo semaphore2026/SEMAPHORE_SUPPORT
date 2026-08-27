@@ -1,35 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
-  IconBell, 
+  IconHome,
   IconCalendar, 
   IconClock, 
   IconHelpCircle, 
   IconUser, 
   IconShield, 
   IconImage, 
-  IconTicket, 
-  IconPhone, 
   IconX 
 } from './Icons';
 
-export function Navbar({ activeSection, onNavigate, onOpenTicketModal, onOpenEmergencyModal }) {
+export function Navbar({ currentPage, onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleNavClick = (id) => {
-    onNavigate(id);
+  const handleNavClick = (pageId) => {
+    onNavigate(pageId);
     setMobileMenuOpen(false);
   };
 
   const navItems = [
+    { id: 'home', label: 'Home', icon: IconHome },
     { id: 'events', label: 'Events', icon: IconCalendar },
     { id: 'schedule', label: 'Schedule', icon: IconClock },
     { id: 'faq', label: 'FAQ', icon: IconHelpCircle },
@@ -39,10 +29,14 @@ export function Navbar({ activeSection, onNavigate, onOpenTicketModal, onOpenEme
   ];
 
   return (
-    <header className={`navbar-wrapper ${isScrolled ? 'scrolled' : ''}`}>
+    <header className="navbar-wrapper">
       <div className="container navbar-container">
-        {/* Brand */}
-        <a href="#top" onClick={(e) => { e.preventDefault(); handleNavClick('top'); }} className="brand-link">
+        {/* Brand Link */}
+        <a 
+          href="#home" 
+          onClick={(e) => { e.preventDefault(); handleNavClick('home'); }} 
+          className="brand-link"
+        >
           <div className="brand-badge">S</div>
           <div className="brand-text">
             <span className="brand-title">SEMAPHORE 2K26</span>
@@ -54,11 +48,13 @@ export function Navbar({ activeSection, onNavigate, onOpenTicketModal, onOpenEme
         <nav className="nav-links-desktop">
           {navItems.map((item) => {
             const Icon = item.icon;
+            const isActive = currentPage === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`nav-link-btn ${activeSection === item.id ? 'active' : ''}`}
+                className={`nav-link-btn ${isActive ? 'active' : ''}`}
+                aria-current={isActive ? 'page' : undefined}
               >
                 <Icon size={16} />
                 <span>{item.label}</span>
@@ -67,25 +63,8 @@ export function Navbar({ activeSection, onNavigate, onOpenTicketModal, onOpenEme
           })}
         </nav>
 
-        {/* Actions (Emergency + Support Ticket + Mobile Toggle) */}
+        {/* Mobile Menu Toggle Button */}
         <div className="nav-actions">
-          <a
-            href="tel:+919845500911"
-            className="btn btn-danger btn-sm"
-            title="Emergency Medical Hotline"
-          >
-            <IconPhone size={15} />
-            <span className="hide-mobile">Emergency</span>
-          </a>
-
-          <button
-            onClick={onOpenTicketModal}
-            className="btn btn-primary btn-sm"
-          >
-            <IconTicket size={15} />
-            <span>Helpdesk</span>
-          </button>
-
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="mobile-menu-toggle"
@@ -106,27 +85,18 @@ export function Navbar({ activeSection, onNavigate, onOpenTicketModal, onOpenEme
       <div className={`mobile-nav-drawer ${mobileMenuOpen ? 'open' : ''}`}>
         {navItems.map((item) => {
           const Icon = item.icon;
+          const isActive = currentPage === item.id;
           return (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className={`mobile-nav-item ${activeSection === item.id ? 'active' : ''}`}
+              className={`mobile-nav-item ${isActive ? 'active' : ''}`}
             >
               <Icon size={18} />
               <span>{item.label}</span>
             </button>
           );
         })}
-        <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
-          <a href="tel:+919845500911" className="btn btn-danger" style={{ flex: 1 }}>
-            <IconPhone size={16} />
-            <span>Call Emergency</span>
-          </a>
-          <button onClick={() => { setMobileMenuOpen(false); onOpenTicketModal(); }} className="btn btn-primary" style={{ flex: 1 }}>
-            <IconTicket size={16} />
-            <span>New Ticket</span>
-          </button>
-        </div>
       </div>
     </header>
   );

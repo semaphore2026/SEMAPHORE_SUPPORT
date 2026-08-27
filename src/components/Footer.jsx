@@ -8,7 +8,7 @@ import {
   IconChevronUp 
 } from './Icons';
 
-export function Footer({ onNavigate, onOpenTicketModal }) {
+export function Footer({ onNavigate }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -21,31 +21,27 @@ export function Footer({ onNavigate, onOpenTicketModal }) {
           <div className="footer-col">
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.85rem' }}>
               <div className="brand-badge" style={{ width: '32px', height: '32px', fontSize: '0.95rem' }}>S</div>
-              <span style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--text-primary)' }}>SEMAPHORE 2026</span>
+              <span style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--text-primary)' }}>SEMAPHORE 2K26</span>
             </div>
-            <p style={{ fontSize: '0.875rem', lineHeight: '1.6', color: 'var(--text-muted)', marginBottom: '1rem' }}>
-              The official centralized event support, schedule, rules, and participant assistance portal for SEMAPHORE 2026. Available 24/7 during festival days.
+            <p style={{ fontSize: '0.875rem', lineHeight: '1.6', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
+              National Level IT Fest organized by Department of MCA, NMAM Institute of Technology, Nitte.
             </p>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
-              <button onClick={onOpenTicketModal} className="btn btn-primary btn-sm">
-                Submit Support Query
-              </button>
-              <a href="tel:+919845500911" className="btn btn-danger btn-sm">
-                Emergency Call
-              </a>
-            </div>
+            <p style={{ fontSize: '0.82rem', color: 'var(--text-dim)' }}>
+              Official portal for event details, schedules, rules, coordinators, and FAQ.
+            </p>
           </div>
 
           {/* Col 2: Quick Links */}
           <div className="footer-col">
-            <h4>Quick Access</h4>
+            <h4>Portal Navigation</h4>
             <ul className="footer-links">
-              <li><a href="#events" onClick={(e) => { e.preventDefault(); onNavigate('events'); }}>Event Directory & Heads</a></li>
-              <li><a href="#schedule" onClick={(e) => { e.preventDefault(); onNavigate('schedule'); }}>Day 1 & 2 Schedules</a></li>
-              <li><a href="#contacts" onClick={(e) => { e.preventDefault(); onNavigate('contacts'); }}>Coordinator Contacts</a></li>
-              <li><a href="#rules" onClick={(e) => { e.preventDefault(); onNavigate('rules'); }}>General Rules & Conduct</a></li>
-              <li><a href="#gallery" onClick={(e) => { e.preventDefault(); onNavigate('gallery'); }}>Photo Gallery</a></li>
-              <li><a href="#faq" onClick={(e) => { e.preventDefault(); onNavigate('faq'); }}>Helpdesk FAQs</a></li>
+              <li><button onClick={() => onNavigate('home')} className="footer-link-btn">Home</button></li>
+              <li><button onClick={() => onNavigate('events')} className="footer-link-btn">Events & Heads</button></li>
+              <li><button onClick={() => onNavigate('schedule')} className="footer-link-btn">Festival Schedule</button></li>
+              <li><button onClick={() => onNavigate('contacts')} className="footer-link-btn">Coordinator Contacts</button></li>
+              <li><button onClick={() => onNavigate('rules')} className="footer-link-btn">General Rules</button></li>
+              <li><button onClick={() => onNavigate('faq')} className="footer-link-btn">Help & FAQ</button></li>
+              <li><button onClick={() => onNavigate('gallery')} className="footer-link-btn">Moments Gallery</button></li>
             </ul>
           </div>
 

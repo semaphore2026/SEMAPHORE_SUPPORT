@@ -128,16 +128,15 @@ export function FaqSection({ faqData, categories, globalSearch, onOpenTicketModa
         }}>
           <div>
             <h4 style={{ color: 'var(--text-primary)', fontSize: '1rem', marginBottom: '0.2rem' }}>
-              Didn't find what you were looking for?
+              Have another question or need specific assistance?
             </h4>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>
-              Our 24/7 central desk volunteers are ready to resolve any issue in person or via ticket.
+              Feel free to reach out directly to the respective student coordinators or faculty conveners.
             </p>
           </div>
-          <button onClick={onOpenTicketModal} className="btn btn-primary">
-            <IconTicket size={16} />
-            <span>Submit Support Query</span>
-          </button>
+          <a href="#contacts" className="btn btn-primary">
+            <span>View Coordinator Contacts</span>
+          </a>
         </div>
       </div>
     </section>

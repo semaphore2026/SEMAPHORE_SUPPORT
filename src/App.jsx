@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 // Data imports
@@ -9,108 +9,141 @@ import { faqData, faqCategories } from './data/faqData';
 import { ruleCategories } from './data/rulesData';
 import { galleryData, galleryCategories } from './data/galleryData';
 
-// Component imports
+// Component & Page imports
 import { Navbar } from './components/Navbar';
-import { HeroBanner } from './components/HeroBanner';
+import { HomePage } from './pages/HomePage';
 import { EventSection } from './components/EventSection';
 import { ScheduleSection } from './components/ScheduleSection';
 import { FaqSection } from './components/FaqSection';
 import { ContactsSection } from './components/ContactsSection';
 import { RulesSection } from './components/RulesSection';
 import { GallerySection } from './components/GallerySection';
-import { SupportTicketModal } from './components/SupportTicketModal';
 import { Footer } from './components/Footer';
+import { IconChevronLeft } from './components/Icons';
 
 function App() {
-  const [activeSection, setActiveSection] = useState('top');
-  const [globalSearch, setGlobalSearch] = useState('');
-  const [isTicketModalOpen, setIsTicketModalOpen] = useState(false);
+  // Read initial page from URL hash if present (e.g. #events)
+  const getInitialPage = () => {
+    const hash = window.location.hash.replace('#', '').toLowerCase();
+    const validPages = ['home', 'events', 'schedule', 'faq', 'contacts', 'rules', 'gallery'];
+    return validPages.includes(hash) ? hash : 'home';
+  };
 
-  const handleNavigate = (sectionId) => {
-    setActiveSection(sectionId);
-    if (sectionId === 'top') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const yOffset = -75; // Account for sticky navbar height
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
+  const [currentPage, setCurrentPage] = useState(getInitialPage);
+  const [globalSearch, setGlobalSearch] = useState('');
+
+  // Handle URL hash changes (browser back/forward button)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+      const validPages = ['home', 'events', 'schedule', 'faq', 'contacts', 'rules', 'gallery'];
+      if (validPages.includes(hash)) {
+        setCurrentPage(hash);
+      }
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const handleNavigate = (pageId) => {
+    setCurrentPage(pageId);
+    window.location.hash = pageId;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <div className="app-layout">
-      {/* Sticky Header Navbar */}
+      {/* Sticky Header Navbar with Home navigation */}
       <Navbar
-        activeSection={activeSection}
+        currentPage={currentPage}
         onNavigate={handleNavigate}
-        onOpenTicketModal={() => setIsTicketModalOpen(true)}
       />
 
-      {/* Main Hero Banner with Global Search and Status */}
-      <HeroBanner
-        globalSearch={globalSearch}
-        setGlobalSearch={setGlobalSearch}
-        onNavigate={handleNavigate}
-        onOpenTicketModal={() => setIsTicketModalOpen(true)}
-        eventsCount={eventsData.length}
-        scheduleCount={scheduleData.length}
-      />
+      {/* Page Content with Breadcrumb Back navigation for inner pages */}
+      <main className="main-content-wrapper">
+        {currentPage !== 'home' && (
+          <div className="page-breadcrumb-bar">
+            <div className="container">
+              <button 
+                onClick={() => handleNavigate('home')} 
+                className="btn btn-secondary btn-sm"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+              >
+                <IconChevronLeft size={16} />
+                <span>Back to Home</span>
+              </button>
+            </div>
+          </div>
+        )}
 
-      {/* Event Details Section (Location, Time, Head Details, Rules) */}
-      <EventSection
-        events={eventsData}
-        globalSearch={globalSearch}
-      />
+        {/* Home Page */}
+        {currentPage === 'home' && (
+          <HomePage
+            onNavigate={handleNavigate}
+            globalSearch={globalSearch}
+            setGlobalSearch={setGlobalSearch}
+            eventsCount={eventsData.length}
+            scheduleCount={scheduleData.length}
+          />
+        )}
 
-      {/* Multi-Day Schedules & Venue Timeline (Date, Time, Venue) */}
-      <ScheduleSection
-        scheduleData={scheduleData}
-        scheduleDays={scheduleDays}
-        scheduleVenues={scheduleVenues}
-        globalSearch={globalSearch}
-      />
+        {/* Events Page */}
+        {currentPage === 'events' && (
+          <EventSection
+            events={eventsData}
+            globalSearch={globalSearch}
+          />
+        )}
 
-      {/* Frequently Asked Questions */}
-      <FaqSection
-        faqData={faqData}
-        categories={faqCategories}
-        globalSearch={globalSearch}
-        onOpenTicketModal={() => setIsTicketModalOpen(true)}
-      />
+        {/* Schedule Page */}
+        {currentPage === 'schedule' && (
+          <ScheduleSection
+            scheduleData={scheduleData}
+            scheduleDays={scheduleDays}
+            scheduleVenues={scheduleVenues}
+            globalSearch={globalSearch}
+          />
+        )}
 
-      {/* Main Contact Persons Directory (Conveners, Leads, Hotlines) */}
-      <ContactsSection
-        contacts={contactsData}
-        categories={contactCategories}
-        globalSearch={globalSearch}
-      />
+        {/* FAQ Page */}
+        {currentPage === 'faq' && (
+          <FaqSection
+            faqData={faqData}
+            categories={faqCategories}
+            globalSearch={globalSearch}
+          />
+        )}
 
-      {/* General Rules & Code of Conduct */}
-      <RulesSection
-        ruleCategories={ruleCategories}
-        globalSearch={globalSearch}
-      />
+        {/* Contacts Page */}
+        {currentPage === 'contacts' && (
+          <ContactsSection
+            contacts={contactsData}
+            categories={contactCategories}
+            globalSearch={globalSearch}
+          />
+        )}
 
-      {/* Photo Gallery & Lightbox */}
-      <GallerySection
-        galleryData={galleryData}
-        categories={galleryCategories}
-        globalSearch={globalSearch}
-      />
+        {/* General Rules Page */}
+        {currentPage === 'rules' && (
+          <RulesSection
+            ruleCategories={ruleCategories}
+            globalSearch={globalSearch}
+          />
+        )}
 
-      {/* 24/7 Support Ticket Desk Modal */}
-      <SupportTicketModal
-        isOpen={isTicketModalOpen}
-        onClose={() => setIsTicketModalOpen(false)}
-      />
+        {/* Photo Gallery Page */}
+        {currentPage === 'gallery' && (
+          <GallerySection
+            galleryData={galleryData}
+            categories={galleryCategories}
+            globalSearch={globalSearch}
+          />
+        )}
+      </main>
 
-      {/* Footer with Hotlines and Quick Links */}
+      {/* Footer */}
       <Footer
         onNavigate={handleNavigate}
-        onOpenTicketModal={() => setIsTicketModalOpen(true)}
       />
     </div>
   );
