@@ -142,9 +142,11 @@ function App() {
       </main>
 
       {/* Footer */}
-      <Footer
-        onNavigate={handleNavigate}
-      />
+      {currentPage !== 'home' && (
+        <Footer
+          onNavigate={handleNavigate}
+        />
+      )}
     </div>
   );
 }
