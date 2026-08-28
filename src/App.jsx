@@ -18,7 +18,6 @@ import { FaqSection } from './components/FaqSection';
 import { ContactsSection } from './components/ContactsSection';
 import { RulesSection } from './components/RulesSection';
 import { GallerySection } from './components/GallerySection';
-import { Footer } from './components/Footer';
 import { IconChevronLeft } from './components/Icons';
 
 function App() {
@@ -64,8 +63,8 @@ function App() {
         {currentPage !== 'home' && (
           <div className="page-breadcrumb-bar">
             <div className="container">
-              <button 
-                onClick={() => handleNavigate('home')} 
+              <button
+                onClick={() => handleNavigate('home')}
                 className="btn btn-secondary btn-sm"
                 style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
               >
@@ -140,13 +139,6 @@ function App() {
           />
         )}
       </main>
-
-      {/* Footer */}
-      {currentPage !== 'home' && (
-        <Footer
-          onNavigate={handleNavigate}
-        />
-      )}
     </div>
   );
 }

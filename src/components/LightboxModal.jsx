@@ -2,23 +2,24 @@ import React, { useEffect } from 'react';
 import { IconX, IconChevronLeft, IconChevronRight, IconMapPin, IconCalendar } from './Icons';
 
 export function LightboxModal({ imageItem, allImages, onClose, onSelectImage }) {
-  if (!imageItem) return null;
-
-  const currentIndex = allImages.findIndex((img) => img.id === imageItem.id);
+  const currentIndex = imageItem ? allImages.findIndex((img) => img.id === imageItem.id) : -1;
 
   const handlePrev = (e) => {
-    e.stopPropagation();
+    e?.stopPropagation();
+    if (currentIndex === -1 || !allImages?.length) return;
     const prevIndex = (currentIndex - 1 + allImages.length) % allImages.length;
     onSelectImage(allImages[prevIndex]);
   };
 
   const handleNext = (e) => {
-    e.stopPropagation();
+    e?.stopPropagation();
+    if (currentIndex === -1 || !allImages?.length) return;
     const nextIndex = (currentIndex + 1) % allImages.length;
     onSelectImage(allImages[nextIndex]);
   };
 
   useEffect(() => {
+    if (!imageItem) return;
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
       if (e.key === 'ArrowLeft') {
@@ -32,7 +33,9 @@ export function LightboxModal({ imageItem, allImages, onClose, onSelectImage }) 
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentIndex, allImages, onClose, onSelectImage]);
+  }, [imageItem, currentIndex, allImages, onClose, onSelectImage]);
+
+  if (!imageItem) return null;
 
   return (
     <div className="lightbox-backdrop" onClick={onClose}>
