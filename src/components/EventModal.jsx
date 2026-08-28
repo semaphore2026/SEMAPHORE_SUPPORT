@@ -1,14 +1,16 @@
 import React from 'react';
-import { 
-  IconX, 
-  IconMapPin, 
-  IconClock, 
-  IconUser, 
-  IconPhone, 
-  IconWhatsApp, 
+import {
+  IconX,
+  IconMapPin,
+  IconClock,
+  IconUser,
+  IconPhone,
+  IconWhatsApp,
   IconCheck
 } from './Icons';
 
+
+// hi
 export function EventModal({ event, onClose }) {
   if (!event) return null;
 
