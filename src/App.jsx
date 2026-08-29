@@ -11,7 +11,6 @@ import { galleryData, galleryCategories } from './data/galleryData';
 
 // Component & Page imports
 import { Navbar } from './components/Navbar';
-import { Footer } from './components/footer';
 import { HomePage } from './pages/HomePage';
 import { EventSection } from './components/EventSection';
 import { ScheduleSection } from './components/ScheduleSection';
@@ -140,7 +139,6 @@ function App() {
           />
         )}
       </main>
-      <Footer />
     </div>
   );
 }
