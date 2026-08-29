@@ -6,7 +6,7 @@ export function Footer() {
       <div className="footer-container">
 
         <div className="footer-brand">
-          <h2>SEMAPHORE</h2>
+          <h2>SEMAPHORE 2K26</h2>
           <p>
             Your event support website for all important
             information, guidelines and assistance.
