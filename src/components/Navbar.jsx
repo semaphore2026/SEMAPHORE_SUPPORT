@@ -7,7 +7,8 @@ import {
   IconUser, 
   IconShield, 
   IconImage, 
-  IconX 
+  IconX,
+  IconChecklist
 } from './Icons';
 
 export function Navbar({ currentPage, onNavigate }) {
@@ -24,8 +25,9 @@ export function Navbar({ currentPage, onNavigate }) {
     { id: 'schedule', label: 'Schedule', icon: IconClock },
     { id: 'faq', label: 'FAQ', icon: IconHelpCircle },
     { id: 'contacts', label: 'Contacts', icon: IconUser },
-    { id: 'rules', label: 'Rules', icon: IconShield },
-    { id: 'gallery', label: 'Gallery', icon: IconImage },
+    { id: 'rules',     label: 'Rules',     icon: IconShield },
+    { id: 'gallery',   label: 'Gallery',   icon: IconImage },
+    { id: 'checklist', label: 'Checklist', icon: IconChecklist },
   ];
 
   return (

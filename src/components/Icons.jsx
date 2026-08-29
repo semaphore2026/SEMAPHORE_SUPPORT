@@ -179,6 +179,78 @@ export const IconTicket = ({ className = "w-5 h-5", size = 20 }) => (
 
 export const IconWhatsApp = ({ className = "w-5 h-5", size = 20 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
-    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.585 1.777.897 2.796.897 3.183 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.784-5.77-5.784zm3.364 8.163c-.143.402-.718.736-1.011.77-.282.033-.646.05-1.047-.078-.242-.077-.552-.187-1.127-.435-1.875-.811-3.08-2.73-3.174-2.855-.094-.124-.761-1.013-.761-1.933s.478-1.371.648-1.547c.17-.176.371-.22.495-.22.124 0 .248.002.356.007.114.006.267-.043.418.32.155.372.531 1.295.577 1.389.047.094.078.204.016.328-.062.124-.094.201-.186.311-.093.109-.196.244-.28.327-.093.093-.19.195-.082.381.109.186.483.797 1.037 1.29 1.134 1.009 2.089 1.32 2.384 1.467.295.147.469.124.643-.077.174-.202.744-.867.943-1.164.199-.297.397-.247.669-.148.273.099 1.733.816 2.031.965.297.148.496.222.569.345.074.124.074.72-.069 1.122zM12 2C6.477 2 2 6.477 2 12c0 1.891.526 3.66 1.438 5.176L2 22l4.954-1.399A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.585 1.777.897 2.796.897 3.183 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.784-5.77-5.784zm3.364 8.163c-.143.402-.718.736-1.011.77-.282.033-.646.05-1.047-.078-.242-.077-.552-.187-1.127-.435-1.875-.811-3.08-2.73-3.174-2.855-.094-.124-.761-1.013-.761-1.933s.478-1.371.648-1.547c.17-.176.371-.22.495-.22.124 0 .248.002.356.007.114.006.267-.043.418.32.155.372.531 1.295.577 1.389.047.094.078.204.016.328-.062.124-.094.201-.186.311-.093.109-.196.244-.28.327-.093.093-.19.195-.082.381.109.186.483.797 1.037 1.29 1.134 1.009 2.089 1.32 2.384 1.467.295.147.469.124.643-.077.174-.202.744-.867.943-1.164.199-.297.397-.247.669-.148.273.099 1.733.816 2.031.965.297.148.496.222.569.345.074.124.074.72-.069 1.122zM12 2C6.477 2 2 6.477 2 12c0 1.891.526 3.66 1.438 5.176L2 22l4.954-1.399A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
+  </svg>
+);
+
+export const IconChecklist = ({ className = "w-5 h-5", size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M9 11l3 3L22 4"></path>
+    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+  </svg>
+);
+
+export const IconPrinter = ({ className = "w-5 h-5", size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+    <rect x="6" y="14" width="12" height="8"></rect>
+  </svg>
+);
+
+export const IconRotateCcw = ({ className = "w-5 h-5", size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <polyline points="1 4 1 10 7 10"></polyline>
+    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+  </svg>
+);
+
+export const IconSparkles = ({ className = "w-5 h-5", size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M12 3l1.912 5.885L20 10l-5.088 2.115L13 18l-1.912-5.885L6 10l5.088-1.115L12 3z"></path>
+    <path d="M5 3v4"></path>
+    <path d="M3 5h4"></path>
+    <path d="M19 17v4"></path>
+    <path d="M17 19h4"></path>
+  </svg>
+);
+
+export const IconCheckCircle2 = ({ className = "w-5 h-5", size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <circle cx="12" cy="12" r="10"></circle>
+    <path d="M9 12l2 2 4-4"></path>
+  </svg>
+);
+
+export const IconCopy = ({ className = "w-5 h-5", size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+  </svg>
+);
+
+export const IconLaptop = ({ className = "w-5 h-5", size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+    <line x1="2" y1="20" x2="22" y2="20"></line>
+  </svg>
+);
+
+export const IconFilter = ({ className = "w-5 h-5", size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+  </svg>
+);
+
+export const IconCheckSquare = ({ className = "w-5 h-5", size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <polyline points="9 11 12 14 22 4"></polyline>
+    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+  </svg>
+);
+
+export const IconSquare = ({ className = "w-5 h-5", size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
   </svg>
 );

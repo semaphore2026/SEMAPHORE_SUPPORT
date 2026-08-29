@@ -18,13 +18,14 @@ import { FaqSection } from './components/FaqSection';
 import { ContactsSection } from './components/ContactsSection';
 import { RulesSection } from './components/RulesSection';
 import { GallerySection } from './components/GallerySection';
+import { ChecklistSection } from './components/ChecklistSection';
 import { IconChevronLeft } from './components/Icons';
 
 function App() {
   // Read initial page from URL hash if present (e.g. #events)
   const getInitialPage = () => {
     const hash = window.location.hash.replace('#', '').toLowerCase();
-    const validPages = ['home', 'events', 'schedule', 'faq', 'contacts', 'rules', 'gallery'];
+    const validPages = ['home', 'events', 'schedule', 'faq', 'contacts', 'rules', 'gallery', 'checklist'];
     return validPages.includes(hash) ? hash : 'home';
   };
 
@@ -35,7 +36,7 @@ function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '').toLowerCase();
-      const validPages = ['home', 'events', 'schedule', 'faq', 'contacts', 'rules', 'gallery'];
+      const validPages = ['home', 'events', 'schedule', 'faq', 'contacts', 'rules', 'gallery', 'checklist'];
       if (validPages.includes(hash)) {
         setCurrentPage(hash);
       }
@@ -135,6 +136,13 @@ function App() {
           <GallerySection
             galleryData={galleryData}
             categories={galleryCategories}
+            globalSearch={globalSearch}
+          />
+        )}
+
+        {/* Participant Checklist Page */}
+        {currentPage === 'checklist' && (
+          <ChecklistSection
             globalSearch={globalSearch}
           />
         )}
