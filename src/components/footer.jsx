@@ -6,7 +6,7 @@ export function Footer() {
       <div className="footer-container">
 
         <div className="footer-brand">
-          <h2>CRYPTIX 2K26</h2>
+          <h2>SEMAPHORE 2K26</h2>
           <p>
             Your event support website for all important
             information, guidelines and assistance.
@@ -44,7 +44,7 @@ export function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2026 CRYPTIX 2K26. All rights reserved.</p>
+        <p>© SEMAPHORE 2K26. All rights reserved.</p>
       </div>
     </footer>
   );
