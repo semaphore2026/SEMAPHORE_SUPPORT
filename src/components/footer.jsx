@@ -32,7 +32,7 @@ export function Footer() {
           </p>
 
           <a
-            href="YOUR_MAIN_WEBSITE_URL"
+            href="https://www.semaphore2k26.in/"
             target="_blank"
             rel="noopener noreferrer"
             className="main-website-button"
