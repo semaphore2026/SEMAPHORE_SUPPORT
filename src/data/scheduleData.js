@@ -13,7 +13,8 @@ export const scheduleVenues = [
   "Esports Lounge (SAC)",
   "Outdoor Quadrangle Arena",
   "Admin Block Boardroom",
-  "Food Court & Cafeteria"
+  "Food Court & Cafeteria",
+  "Sambhrama Auditorium"
 ];
 
 export const scheduleData = [
@@ -21,15 +22,21 @@ export const scheduleData = [
   {
     id: "sch-01",
     day: "day1",
-    time: "08:30 AM - 09:45 AM",
+    time: "12:55 AM - 12:56 AM",
     title: "Participant Desk Registration & Welcome Kit Distribution",
     category: "General",
-    date: "October 16, 2026",
+    date: "August 30, 2026",
     venue: "Main Auditorium Foyer",
     locationDetail: "Ground Floor, Central Block",
     status: "Completed",
-    coordinator: "Registration Helpdesk (Desk #1 - #6)",
-    description: "Verification of college IDs, biometric badge allocation, breakfast coupons, and event kits."
+    coordinator: "Registration Team (+91 98765 43210)",
+    contactphone: "+91 98765 43210",
+    contactwhatsapp: "+91 98765 43210",
+    description: "Verification of college IDs, biometric badge allocation, breakfast coupons, and event kits.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-02",
@@ -38,11 +45,17 @@ export const scheduleData = [
     title: "Grand Inauguration Ceremony & Keynote Address",
     category: "General",
     date: "October 16, 2026",
-    venue: "Main Auditorium",
-    locationDetail: "Sir M.V. Central Auditorium",
+    venue: "Sambhrama Auditorium",
+    locationDetail: "C.V. Ramanujan Block, Ground Floor",
     status: "Live Now",
     coordinator: "Chief Patron & Fest Conveners",
-    description: "Opening keynote by Chief Guest Dr. Anirudh Sen (Director of AI Research) and official festival flag unfurling."
+    contactphone: "+91 98765 43210",
+    contactwhatsapp: "+91 98765 43210",
+    description: "Opening keynote by Chief Guest Dr. Anirudh Sen (Director of AI Research) and official festival flag unfurling.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-03",
@@ -55,7 +68,13 @@ export const scheduleData = [
     locationDetail: "3rd Floor CS Block, Turing & Newton Labs",
     status: "Live Now",
     coordinator: "Rahul Sharma (+91 98450 12345)",
-    description: "Domain reveal, GitHub repository initializations, and continuous sprint commencement."
+    contactphone: "+91 98450 12345",
+    contactwhatsapp: "+91 98450 12345",
+    description: "Domain reveal, GitHub repository initializations, and continuous sprint commencement.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-04",
@@ -68,7 +87,13 @@ export const scheduleData = [
     locationDetail: "2nd Floor IT Wing",
     status: "Upcoming",
     coordinator: "Priya Nair (+91 98765 43211)",
-    description: "Interactive layout development under strict Figma specifications and responsive constraints."
+    contactphone: "+91 98765 43211",
+    contactwhatsapp: "+91 98765 43211",
+    description: "Interactive layout development under strict Figma specifications and responsive constraints.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-05",
@@ -81,7 +106,13 @@ export const scheduleData = [
     locationDetail: "4th Floor, Conference Hall B",
     status: "Upcoming",
     coordinator: "Shreya Bhat (+91 97334 11223)",
-    description: "Analytical case study solving technical disruptions and budget reallocation challenges."
+    contactphone: "+91 97334 11223",
+    contactwhatsapp: "+91 97334 11223",
+    description: "Analytical case study solving technical disruptions and budget reallocation challenges.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-06",
@@ -94,7 +125,13 @@ export const scheduleData = [
     locationDetail: "Main Dining Hall (Ground Floor)",
     status: "Upcoming",
     coordinator: "Hospitality Team (Desk #8)",
-    description: "Complimentary multi-cuisine buffet for all registered teams and faculty advisors with valid badges."
+    contactphone: "+91 98765 43212",
+    contactwhatsapp: "+91 98765 43212",
+    description: "Complimentary multi-cuisine buffet for all registered teams and faculty advisors with valid badges.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-07",
@@ -107,7 +144,14 @@ export const scheduleData = [
     locationDetail: "Student Activity Centre, 1st Floor",
     status: "Upcoming",
     coordinator: "Vikram Das (+91 98112 34567)",
-    description: "LAN tournament bracket elimination matches with live big-screen spectator streaming."
+    contactphone: "+91 98112 34567",
+    contactwhatsapp: "+91 98112 34567",
+    description: "LAN tournament bracket elimination matches with live big-screen spectator streaming.",
+
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-08",
@@ -120,7 +164,13 @@ export const scheduleData = [
     locationDetail: "1st Floor CS Block, Room 104",
     status: "Upcoming",
     coordinator: "Aditya Kulkarni (+91 97412 88990)",
-    description: "Rapid logic debugging, syntax repair, and exploit patching test suite."
+    contactphone: "+91 97412 88990",
+    contactwhatsapp: "+91 97412 88990",
+    description: "Rapid logic debugging, syntax repair, and exploit patching test suite.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-09",
@@ -133,7 +183,13 @@ export const scheduleData = [
     locationDetail: "Sir M.V. Auditorium",
     status: "Upcoming",
     coordinator: "Tech Forum & Student Council",
-    description: "Interactive session with industry leaders from Google Cloud, Microsoft & NVIDIA."
+    contactphone: "+91 98765 43213",
+    contactwhatsapp: "+91 98765 43213",
+    description: "Interactive session with industry leaders from Google Cloud, Microsoft & NVIDIA.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-10",
@@ -146,7 +202,13 @@ export const scheduleData = [
     locationDetail: "Main Dining & Turing Lab Lounge",
     status: "Upcoming",
     coordinator: "Hospitality & Hackathon Logistics",
-    description: "Dinner buffet, energy drinks, and midnight snacks provided at hackathon stations."
+    contactphone: "+91 98765 43214",
+    contactwhatsapp: "+91 98765 43214",
+    description: "Dinner buffet, energy drinks, and midnight snacks provided at hackathon stations.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
 
   // DAY 2
@@ -161,7 +223,13 @@ export const scheduleData = [
     locationDetail: "Main Dining Hall",
     status: "Upcoming",
     coordinator: "Hospitality Desk",
-    description: "Continental & Indian breakfast spread for participants and volunteers."
+    contactphone: "+91 98765 43215",
+    contactwhatsapp: "+91 98765 43215",
+    description: "Continental & Indian breakfast spread for participants and volunteers.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-12",
@@ -174,7 +242,13 @@ export const scheduleData = [
     locationDetail: "Ground Floor PG Block",
     status: "Upcoming",
     coordinator: "Meera Sen (+91 99881 22334)",
-    description: "Prompt optimization sandbox trials, adversarial jailbreak challenges, and data visualizations."
+    contactphone: "+91 99881 22334",
+    contactwhatsapp: "+91 99881 22334",
+    description: "Prompt optimization sandbox trials, adversarial jailbreak challenges, and data visualizations.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-13",
@@ -187,7 +261,13 @@ export const scheduleData = [
     locationDetail: "Sir M.V. Auditorium Main Stage",
     status: "Upcoming",
     coordinator: "Rahul Sharma (+91 98450 12345)",
-    description: "Top 8 shortlisted hackathon teams present 7-minute live stage demos before VC & industry jury."
+    contactphone: "+91 98450 12345",
+    contactwhatsapp: "+91 98450 12345",
+    description: "Top 8 shortlisted hackathon teams present 7-minute live stage demos before VC & industry jury.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-14",
@@ -200,7 +280,13 @@ export const scheduleData = [
     locationDetail: "Executive Chamber, 4th Floor",
     status: "Upcoming",
     coordinator: "Shreya Bhat (+91 97334 11223)",
-    description: "High-intensity leadership stress interview under unforeseen corporate collapse scenarios."
+    contactphone: "+91 97334 11223",
+    contactwhatsapp: "+91 97334 11223",
+    description: "High-intensity leadership stress interview under unforeseen corporate collapse scenarios.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-15",
@@ -213,7 +299,13 @@ export const scheduleData = [
     locationDetail: "Sir M.V. Auditorium Mini-Hall",
     status: "Upcoming",
     coordinator: "Ananya Iyer (+91 99001 55667)",
-    description: "25-question rapid pen/paper prelim followed by 6-team multimedia buzzer showdown."
+    contactphone: "+91 99001 55667",
+    contactwhatsapp: "+91 99001 55667",
+    description: "25-question rapid pen/paper prelim followed by 6-team multimedia buzzer showdown.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-16",
@@ -226,7 +318,13 @@ export const scheduleData = [
     locationDetail: "Main Dining Hall",
     status: "Upcoming",
     coordinator: "Hospitality Desk",
-    description: "Special celebratory lunch buffet for all attendees."
+    contactphone: "+91 98765 43215",
+    contactwhatsapp: "+91 98765 43215",
+    description: "Special celebratory lunch buffet for all attendees.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-17",
@@ -239,7 +337,13 @@ export const scheduleData = [
     locationDetail: "Central Lawn Pits Area",
     status: "Upcoming",
     coordinator: "Divyansh Mehta (+91 98223 99881)",
-    description: "Time-trial speed runs over dynamic obstacles followed by top-4 elimination races."
+    contactphone: "+91 98223 99881",
+    contactwhatsapp: "+91 98223 99881",
+    description: "Time-trial speed runs over dynamic obstacles followed by top-4 elimination races.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-18",
@@ -252,7 +356,13 @@ export const scheduleData = [
     locationDetail: "SAC Main Screen Arena",
     status: "Upcoming",
     coordinator: "Vikram Das (+91 98112 34567)",
-    description: "Best of 3 Championship match casted live on the arena screen."
+    contactphone: "+91 98112 34567",
+    contactwhatsapp: "+91 98112 34567",
+    description: "Best of 3 Championship match casted live on the arena screen.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   },
   {
     id: "sch-19",
@@ -265,6 +375,12 @@ export const scheduleData = [
     locationDetail: "Sir M.V. Auditorium",
     status: "Upcoming",
     coordinator: "Chief Patrons, Conveners & Student Council",
-    description: "Awarding of cash prizes, overall championship rolling trophy, runner-up accolades, and certificate issuance."
+    contactphone: "+91 98765 43210",
+    contactwhatsapp: "+91 98765 43210",
+    description: "Awarding of cash prizes, overall championship rolling trophy, runner-up accolades, and certificate issuance.",
+    guidelines: [
+      "Participants must bring their own peripherals (mouse, keyboard, headset).",
+      "All matches will be played on the official tournament servers.",
+    ]
   }
 ];

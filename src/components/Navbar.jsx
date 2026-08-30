@@ -20,8 +20,7 @@ export function Navbar({ currentPage, onNavigate }) {
 
   const navItems = [
     { id: 'home', label: 'Home', icon: IconHome },
-    { id: 'events', label: 'Events', icon: IconCalendar },
-    { id: 'schedule', label: 'Schedule', icon: IconClock },
+    { id: 'schedule', label: 'Events', icon: IconCalendar},
     { id: 'faq', label: 'FAQ', icon: IconHelpCircle },
     { id: 'contacts', label: 'Contacts', icon: IconUser },
     { id: 'rules', label: 'Rules', icon: IconShield },
