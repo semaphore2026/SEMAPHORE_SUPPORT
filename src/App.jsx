@@ -18,13 +18,14 @@ import { FaqSection } from './components/FaqSection';
 import { ContactsSection } from './components/ContactsSection';
 import { RulesSection } from './components/RulesSection';
 import { GallerySection } from './components/GallerySection';
+import ArrivalCheckin from './components/check-in/ArrivalCheckin';
 import { IconChevronLeft } from './components/Icons';
 
 function App() {
   // Read initial page from URL hash if present (e.g. #events)
   const getInitialPage = () => {
     const hash = window.location.hash.replace('#', '').toLowerCase();
-    const validPages = ['home', 'events', 'schedule', 'faq', 'contacts', 'rules', 'gallery'];
+    const validPages = ['home', 'events', 'schedule', 'checkin', 'faq', 'contacts', 'rules', 'gallery'];
     return validPages.includes(hash) ? hash : 'home';
   };
 
@@ -35,7 +36,7 @@ function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '').toLowerCase();
-      const validPages = ['home', 'events', 'schedule', 'faq', 'contacts', 'rules', 'gallery'];
+      const validPages = ['home', 'events', 'schedule', 'checkin', 'faq', 'contacts', 'rules', 'gallery'];
       if (validPages.includes(hash)) {
         setCurrentPage(hash);
       }
@@ -60,21 +61,6 @@ function App() {
 
       {/* Page Content with Breadcrumb Back navigation for inner pages */}
       <main className="main-content-wrapper">
-        {currentPage !== 'home' && (
-          <div className="page-breadcrumb-bar">
-            <div className="container">
-              <button
-                onClick={() => handleNavigate('home')}
-                className="btn btn-secondary btn-sm"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
-              >
-                <IconChevronLeft size={16} />
-                <span>Back to Home</span>
-              </button>
-            </div>
-          </div>
-        )}
-
         {/* Home Page */}
         {currentPage === 'home' && (
           <HomePage
@@ -102,6 +88,11 @@ function App() {
             scheduleVenues={scheduleVenues}
             globalSearch={globalSearch}
           />
+        )}
+
+        {/* Check-In Page */}
+        {currentPage === 'checkin' && (
+          <ArrivalCheckin />
         )}
 
         {/* FAQ Page */}
