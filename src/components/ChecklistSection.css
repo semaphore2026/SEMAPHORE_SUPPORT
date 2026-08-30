@@ -6,7 +6,7 @@
      Dark Slate #1E293B  — main text
      Indigo     #4F46E5  — buttons & accents
      White      #FFFFFF  — card backgrounds
-     Soft Amber #D97706  — countdown timer & highlights
+     Soft Amber #D97706  — highlights
    ===================================================== */
 
 .checklist-page-wrapper {
@@ -21,7 +21,6 @@
   --cl-amber:        #D97706;
   --cl-amber-dark:   #B45309;
   --cl-amber-soft:   rgba(217, 119, 6, 0.10);
-  --cl-amber-bg:     #FFFBEB;
   --cl-border:       #E2E8F0;
   --cl-border-md:    #CBD5E1;
   --cl-success:      #059669;
@@ -86,64 +85,6 @@
 @media (max-width: 640px) {
   .checklist-hero-header { padding: 1.5rem 1.25rem 1.25rem; }
   .checklist-main-title { font-size: 1.5rem; }
-}
-
-/* ── SOFT AMBER COUNTDOWN BANNER ── */
-.countdown-highlight-banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1.5rem 2rem;
-  background: linear-gradient(135deg, var(--cl-amber-bg) 0%, #FEF3C7 100%);
-  border-bottom: 1px solid rgba(217,119,6,0.20);
-  flex-wrap: wrap;
-}
-.countdown-info { flex: 1; min-width: 220px; }
-.countdown-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.7rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--cl-amber-dark);
-  margin-bottom: 0.5rem;
-}
-.countdown-pulse-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--cl-amber);
-  animation: cl-pulse-amber 1.6s ease-in-out infinite;
-}
-@keyframes cl-pulse-amber {
-  0%   { box-shadow: 0 0 0 0    rgba(217,119,6,0.55); }
-  70%  { box-shadow: 0 0 0 10px rgba(217,119,6,0);    }
-  100% { box-shadow: 0 0 0 0    rgba(217,119,6,0);   }
-}
-.countdown-title { font-size: 1.1rem; font-weight: 700; color: var(--cl-text); margin-bottom: 0.25rem; }
-.countdown-subtitle { font-size: 0.8rem; color: var(--cl-text-muted); }
-.countdown-timer-grid { display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; }
-.countdown-unit-box {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  background: rgba(217,119,6,0.12);
-  border: 1.5px solid rgba(217,119,6,0.25);
-  border-radius: var(--cl-radius-sm);
-  padding: 0.55rem 0.85rem;
-  min-width: 62px;
-}
-.countdown-number {
-  font-size: 1.7rem; font-weight: 800; color: var(--cl-amber-dark);
-  line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.03em;
-  font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
-}
-.countdown-label { font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--cl-amber); margin-top: 0.1rem; }
-.countdown-colon { font-size: 1.6rem; font-weight: 800; color: var(--cl-amber); line-height: 1; margin-bottom: 1rem; }
-@media (max-width: 680px) {
-  .countdown-highlight-banner { flex-direction: column; align-items: flex-start; padding: 1.25rem; gap: 1rem; }
-  .countdown-unit-box { min-width: 50px; padding: 0.45rem 0.6rem; }
-  .countdown-number { font-size: 1.35rem; }
 }
 
 /* ── PROGRESS CARD ── */
@@ -376,7 +317,7 @@
 /* ── @PRINT ── */
 @media print {
   .checklist-page-wrapper { padding: 0; }
-  .checklist-filter-toolbar, .checklist-quick-actions-bar, .coord-buttons, .countdown-timer-grid { display: none !important; }
+  .checklist-filter-toolbar, .checklist-quick-actions-bar, .coord-buttons { display: none !important; }
   .checklist-hero-card, .checklist-category-card, .event-checklist-card { box-shadow: none; border: 1px solid #CBD5E1; break-inside: avoid; page-break-inside: avoid; }
   .print-footer-banner { display: block; text-align: center; font-size: 0.8rem; color: #64748B; margin-top: 2rem; border-top: 1px solid #E2E8F0; padding-top: 1rem; }
   .progress-bar-fill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }

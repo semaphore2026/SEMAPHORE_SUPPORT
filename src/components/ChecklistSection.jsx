@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import './ChecklistSection.css';
-import { countdownConfig, generalChecklist, eventChecklists } from '../data/checklistData';
+import { generalChecklist, eventChecklists } from '../data/checklistData';
 import {
   IconCheck,
   IconCheckSquare,
@@ -44,26 +44,6 @@ export function ChecklistSection({ globalSearch = '' }) {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(checkedItems)); }
     catch (e) { /* silent */ }
   }, [checkedItems]);
-
-  // /* ── LIVE COUNTDOWN ── */
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0, isExpired: false });
-
-  useEffect(() => {
-    const calc = () => {
-      const diff = new Date(countdownConfig.targetDate).getTime() - Date.now();
-      if (diff <= 0) { setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0, isExpired: true }); return; }
-      setTimeLeft({
-        days: Math.floor(diff / 86400000),
-        hours: Math.floor((diff / 3600000) % 24),
-        minutes: Math.floor((diff / 60000) % 60),
-        seconds: Math.floor((diff / 1000) % 60),
-        isExpired: false,
-      });
-    };
-    calc();
-    const id = setInterval(calc, 1000);
-    return () => clearInterval(id);
-  }, []);
 
   const toggleItem = (id) =>
     setCheckedItems((prev) => prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]);
@@ -183,29 +163,6 @@ export function ChecklistSection({ globalSearch = '' }) {
             <p className="checklist-subtitle">
               Ensure you and your contingent are 100% prepared. Complete the general campus prerequisites first, then review your event-specific requirements.
             </p>
-          </div>
-
-          {/* ── AMBER COUNTDOWN ── */}
-          <div className="countdown-highlight-banner" aria-label="Fest Kickoff Countdown">
-            <div className="countdown-info">
-              <div className="countdown-badge">
-                <span className="countdown-pulse-dot"></span>
-                EVENT COUNTDOWN
-              </div>
-              <h3 className="countdown-title">{countdownConfig.title}</h3>
-              <p className="countdown-subtitle">{countdownConfig.subtitle}</p>
-            </div>
-            <div className="countdown-timer-grid">
-              {[['days', 'DAYS'], ['hours', 'HOURS'], ['minutes', 'MINS'], ['seconds', 'SECS']].map(([key, label], i) => (
-                <React.Fragment key={key}>
-                  {i > 0 && <span className="countdown-colon">:</span>}
-                  <div className="countdown-unit-box">
-                    <span className="countdown-number">{String(timeLeft[key]).padStart(2, '0')}</span>
-                    <span className="countdown-label">{label}</span>
-                  </div>
-                </React.Fragment>
-              ))}
-            </div>
           </div>
 
           {/* ── PROGRESS METER ── */}

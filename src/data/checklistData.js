@@ -1,9 +1,3 @@
-export const countdownConfig = {
-  targetDate: "2026-09-01T09:00:00",
-  title: "Event Starts In",
-  subtitle: "Get everything ready before the event begins.",
-};
-
 export const generalChecklist = [
   {
     id: "required-documents",
