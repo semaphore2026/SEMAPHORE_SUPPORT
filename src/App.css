@@ -1516,6 +1516,42 @@
   padding: 2rem 0 4rem;
 }
 
+.campus-map-section .section-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.campus-map-section .section-title-wrapper {
+  margin-bottom: 0.75rem;
+}
+
+.campus-map-section .section-tag {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #eff6ff;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+}
+
+.campus-map-section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.campus-map-section .section-description {
+  color: var(--text-secondary);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
 .map-content-wrapper {
   display: flex;
   flex-direction: column;

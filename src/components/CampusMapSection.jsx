@@ -130,6 +130,7 @@ export function CampusMapSection({ campusData, categories, globalSearch = '' }) 
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn btn-sm btn-primary facility-action-btn"
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
                     >
                       <IconMapPin size={14} />
                       <span>Open in Maps</span>
