@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { 
   IconClock, 
   IconCalendar, 
   IconMapPin, 
   IconSearch, 
-  IconUser, 
-  IconAlertTriangle 
+  IconUser 
 } from './Icons';
 
 export function ScheduleSection({ scheduleData, scheduleDays, scheduleVenues, globalSearch }) {

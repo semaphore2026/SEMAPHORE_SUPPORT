@@ -1,14 +1,9 @@
-/* ═══════════════════════════════════════════════════════
-   ARRIVAL & CHECK-IN SECTION — Semaphore 2K26
-   Dark futuristic theme | glassmorphism | responsive
-   ═══════════════════════════════════════════════════════ */
-
 /* ── Section shell ──────────────────────────────────── */
 .ac-section {
   position: relative;
   overflow: hidden;
   background: #F8FAFC;
-  padding: 7rem 1.5rem 5rem;
+  padding: 4rem 1.5rem 5rem;
   font-family: "Inter", "Outfit", system-ui, sans-serif;
 }
 
@@ -157,7 +152,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 12px currentColor);
+  filter: drop-shadow(0 0 5px currentColor);
 }
 
 /* Dot connector */

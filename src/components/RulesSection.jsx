@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { 
   IconShield, 
   IconCheck, 
   IconSearch, 
-  IconDownload, 
-  IconClock, 
-  IconAlertTriangle, 
-  IconAward 
+  IconDownload 
 } from './Icons';
 
 export function RulesSection({ ruleCategories, globalSearch }) {

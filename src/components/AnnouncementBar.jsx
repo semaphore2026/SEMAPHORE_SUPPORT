@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { IconBell, IconAlertTriangle, IconClock, IconSearch } from './Icons';
 
 export function AnnouncementBar({ announcements, onNavigate }) {

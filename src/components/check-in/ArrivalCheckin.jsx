@@ -156,8 +156,8 @@ export default function ArrivalCheckin() {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            {steps.map((step, i) => (
-              <StepCard key={step.number} step={step} index={i} />
+            {steps.map((step) => (
+              <StepCard key={step.number} step={step} />
             ))}
           </motion.div>
 
@@ -207,7 +207,7 @@ export default function ArrivalCheckin() {
   );
 }
 
-function StepCard({ step, index }) {
+function StepCard({ step }) {
   const Icon = step.icon;
 
   return (
@@ -217,7 +217,7 @@ function StepCard({ step, index }) {
         className="ac-step-number"
         style={{
           color: step.color,
-          textShadow: `0 0 24px ${step.glow}`,
+          textShadow: `0 0 5px ${step.glow}`,
         }}
       >
         {step.number}

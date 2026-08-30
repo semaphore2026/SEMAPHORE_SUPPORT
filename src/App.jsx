@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 // Data imports
@@ -19,7 +19,6 @@ import { ContactsSection } from './components/ContactsSection';
 import { RulesSection } from './components/RulesSection';
 import { GallerySection } from './components/GallerySection';
 import ArrivalCheckin from './components/check-in/ArrivalCheckin';
-import { IconChevronLeft } from './components/Icons';
 
 function App() {
   // Read initial page from URL hash if present (e.g. #events)
