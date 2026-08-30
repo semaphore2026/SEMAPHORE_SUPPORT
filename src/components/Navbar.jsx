@@ -7,6 +7,7 @@ import {
   IconUser, 
   IconShield, 
   IconImage, 
+  IconMap,
   IconX 
 } from './Icons';
 
@@ -26,6 +27,7 @@ export function Navbar({ currentPage, onNavigate }) {
     { id: 'contacts', label: 'Contacts', icon: IconUser },
     { id: 'rules', label: 'Rules', icon: IconShield },
     { id: 'gallery', label: 'Gallery', icon: IconImage },
+    { id: 'map', label: 'Campus Map', icon: IconMap },
   ];
 
   return (

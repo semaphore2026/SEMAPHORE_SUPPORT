@@ -17,6 +17,9 @@ export function HomePage({ onNavigate }) {
             <button onClick={() => onNavigate('schedule')} className="btn btn-secondary">
               View Schedule
             </button>
+            <button onClick={() => onNavigate('map')} className="btn btn-secondary">
+              Campus Map
+            </button>
             <button onClick={() => onNavigate('contacts')} className="btn btn-secondary">
               Contact Coordinators
             </button>

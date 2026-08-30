@@ -8,6 +8,7 @@ import { contactsData, contactCategories } from './data/contactsData';
 import { faqData, faqCategories } from './data/faqData';
 import { ruleCategories } from './data/rulesData';
 import { galleryData, galleryCategories } from './data/galleryData';
+import { campusData, facilityCategories } from './data/campusData';
 
 // Component & Page imports
 import { Navbar } from './components/Navbar';
@@ -18,13 +19,14 @@ import { FaqSection } from './components/FaqSection';
 import { ContactsSection } from './components/ContactsSection';
 import { RulesSection } from './components/RulesSection';
 import { GallerySection } from './components/GallerySection';
+import { CampusMapSection } from './components/CampusMapSection';
 import { IconChevronLeft } from './components/Icons';
 
 function App() {
   // Read initial page from URL hash if present (e.g. #events)
   const getInitialPage = () => {
     const hash = window.location.hash.replace('#', '').toLowerCase();
-    const validPages = ['home', 'events', 'schedule', 'faq', 'contacts', 'rules', 'gallery'];
+    const validPages = ['home', 'events', 'schedule', 'faq', 'contacts', 'rules', 'gallery', 'map'];
     return validPages.includes(hash) ? hash : 'home';
   };
 
@@ -35,7 +37,7 @@ function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '').toLowerCase();
-      const validPages = ['home', 'events', 'schedule', 'faq', 'contacts', 'rules', 'gallery'];
+      const validPages = ['home', 'events', 'schedule', 'faq', 'contacts', 'rules', 'gallery', 'map'];
       if (validPages.includes(hash)) {
         setCurrentPage(hash);
       }
@@ -135,6 +137,15 @@ function App() {
           <GallerySection
             galleryData={galleryData}
             categories={galleryCategories}
+            globalSearch={globalSearch}
+          />
+        )}
+
+        {/* Campus Map Page */}
+        {currentPage === 'map' && (
+          <CampusMapSection
+            campusData={campusData}
+            categories={facilityCategories}
             globalSearch={globalSearch}
           />
         )}
